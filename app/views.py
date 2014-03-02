@@ -29,7 +29,7 @@ def index():
 
       // Define what should happen when the response is loaded
       iframe.addEventListener("load", function () {
-        document.getElementById('show').innerHTML = "data sent";
+        document.getElementById('show').innerHTML = "data sent: " + document.getElementById('options').value;
         document.getElementById('show').style.display = "block";
       });
 
@@ -54,7 +54,7 @@ def index():
     function sendRequest(){
        var value = document.getElementById('options').value;
        if(value !== ""){
-            sendData({led: parseInt(value)});
+            sendData({led: value});
        }
     }
 </script>
@@ -62,7 +62,7 @@ def index():
         <option value="">please choose</option>
 """
     for i in range(0, 36):
-        s += "\no        <option value=\"{0}\">{0}</option>".format(i)
+        s += "\n        <option value=\"{0}\">{0}</option>".format(i)
     s += """
     </select>
 <div id="show" style="display:none;"></div>
