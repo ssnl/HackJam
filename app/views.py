@@ -29,7 +29,8 @@ def index():
 
       // Define what should happen when the response is loaded
       iframe.addEventListener("load", function () {
-        alert("Yeah! Data sent.");
+        document.getElementById('show').innerHTML = "data sent";
+        document.getElementById('show').style.display = "block";
       });
 
       form.action = "https://agent.electricimp.com/B1iqTo1VR_He";
